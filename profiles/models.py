@@ -4,6 +4,9 @@ from django.contrib.auth.models import User
 
 
 class Profile(models.Model):
+    """
+    Database model for user profiles
+    """
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=50, blank=False)
     avatar = models.ImageField(
