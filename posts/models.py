@@ -9,7 +9,7 @@ class Post(models.Model):
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=200, blank=False)
-    include_image = models.BooleanField(default=False)
+    include_text = models.BooleanField(default=False)
     text = models.TextField(blank=True)
     excerpt = models.CharField(max_length=300, blank=True)
     include_image = models.BooleanField(default=False)
