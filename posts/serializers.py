@@ -6,7 +6,15 @@ class PostSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
-    profile_image = serializers.ReadOnlyField(source='owner.profile.avatar')
+    profile_image = serializers.ReadOnlyField(
+        source='owner.profile.avatar.url'
+    )
+    audio = serializers.SerializerMethodField()
+
+    def get_audio(self, obj):
+        if obj.audio:
+            return obj.audio.url
+        return None
 
     def validate_image(self, value):
         if value.size > 1024 * 1024 * 5:
@@ -35,5 +43,6 @@ class PostSerializer(serializers.ModelSerializer):
             'include_image', 'image',
             'include_audio', 'audio',
             'created_on', 'updated_on',
-            'is_owner'
+            'profile_id', 'profile_image',
+            'is_owner',
         ]
