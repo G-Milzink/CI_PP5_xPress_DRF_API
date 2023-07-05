@@ -14,10 +14,12 @@ class Post(models.Model):
     include_image = models.BooleanField(default=False)
     image = models.ImageField(
         upload_to='post_images',
-        default='..xPress/default_post_image'
+        default='../xPress/default_post_image',
+        blank=True
     )
     include_audio = models.BooleanField(default=False)
     audio = CloudinaryField(
+        folder='xPress/post_audios',
         resource_type='auto',
         blank=True
     )
