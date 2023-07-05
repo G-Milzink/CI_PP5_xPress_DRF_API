@@ -21,11 +21,11 @@ class PostSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(
                 'Image size exceeds 5MB!'
             )
-        if value.width > 4096:
+        if value.image.width > 4096:
             raise serializers.ValidationError(
                 'Image width exceeds 4096 pixels!'
             )
-        if value.height > 4096:
+        if value.image.height > 4096:
             raise serializers.ValidationError(
                 'Image height exceeds 4096 pixels!'
             )
