@@ -4,9 +4,10 @@ from .models import Like
 
 
 class LikeSerializer(serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source-'owner.username')
+    owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
+        model = Like
         ordering = ['-created_on']
         fields = [
             'id',
