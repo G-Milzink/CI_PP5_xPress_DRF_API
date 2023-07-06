@@ -1,3 +1,4 @@
-from django.shortcuts import render
-
-# Create your views here.
+from rest_framework import generics, permissions
+from xpress_api.permissions import IsOwnerOrReadOnly
+from likes.models import Like
+from .serializers import LikeSerializer
