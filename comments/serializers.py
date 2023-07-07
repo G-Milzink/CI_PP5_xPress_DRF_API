@@ -4,7 +4,7 @@ from .models import Comment
 
 class CommentSerializer(serializers.ModelSerializer):
     """
-    Serializes comment model
+    Serializer for Comment model
     Adds 'is_owner', 'profile_id', 'profile_image' fields
     on retreival of comments list.
     """
