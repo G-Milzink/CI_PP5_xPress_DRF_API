@@ -36,6 +36,11 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 8,
 }
 
+if 'DEV' not in os.environ:
+    REST_FRAMEWORK['DEFAULT_RENDERING_CLASS'] = [
+        'rest_framework.renderers.JSONRenderer'
+    ]
+
 REST_USE_JWT = True
 JWT_AUTH_SECURE = True
 JWT_AUTH_COOKIE = 'xpress-auth'
