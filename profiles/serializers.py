@@ -7,6 +7,9 @@ class ProfileSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     following_id = serializers.SerializerMethodField()
+    posts_count = serializers.ReadOnlyField()
+    followers_count = serializers.ReadOnlyField()
+    following_count = serializers.ReadOnlyField()
 
     def validate_avatar(self, value):
         if value.size > 1024 * 1024 * 2:
@@ -43,4 +46,5 @@ class ProfileSerializer(serializers.ModelSerializer):
             'name', 'avatar', 'bio',
             'created_on', 'updated_on',
             'is_owner', 'following_id',
+            'posts_count', 'followers_count', 'following_count',
         ]
