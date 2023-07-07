@@ -15,6 +15,8 @@ class PostSerializer(serializers.ModelSerializer):
     )
     audio = serializers.SerializerMethodField()
     like_id = serializers.SerializerMethodField()
+    comments_count = serializers.ReadOnlyField()
+    likes_count = serializers.ReadOnlyField()
 
     def get_audio(self, obj):
         if obj.audio:
@@ -59,4 +61,5 @@ class PostSerializer(serializers.ModelSerializer):
             'created_on', 'updated_on',
             'profile_id', 'profile_image',
             'is_owner', 'like_id',
+            'comments_count', 'likes_count',
         ]
