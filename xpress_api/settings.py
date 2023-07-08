@@ -64,7 +64,7 @@ DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
     '8000-gmilzink-cipp5xpressdrf-g3xzybucxyg.ws-eu101.gitpod.io',
-    'xpress-drf-api.herokuapp.com'
+    'xpress-drf-api-96b1c58706ca.herokuapp.com'
 ]
 
 
