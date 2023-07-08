@@ -40,7 +40,7 @@ REST_FRAMEWORK = {
 }
 
 if 'DEV' not in os.environ:
-    REST_FRAMEWORK['DEFAULT_RENDERING_CLASS'] = [
+    REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] = [
         'rest_framework.renderers.JSONRenderer'
     ]
 
