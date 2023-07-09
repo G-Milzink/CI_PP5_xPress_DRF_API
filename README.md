@@ -80,6 +80,15 @@ Contains the following fields:
 - Django
 
 ### Libraries & Tools
+- [Git](https://git-scm.com/) - Version control system. Used for version control and pushing code to GitHub.
+- [GitHub](https://github.com/) - Cloud based hosting service. Used as  remote repository to store project code.
+- [Gitpod](https://gitpod.io) - Cloud based development environment. Used to host a virtual workspace.
+- [Django REST Framework](https://www.django-rest-framework.org/) - API toolkit. Used this to build the back-end API.
+- [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/index.html) - API Module. Used for user authentication.
+- [Psycopg2](https://pypi.org/project/psycopg2/) - PostgreSQL database adaptor. Justification: Used as a PostgreSQL database adapter for Python
+- [Cloudinary](https://cloudinary.com/) - Online file storage. Used to store all images and audio files.
+- [ElephantSQL](https://www.elephantsql.com/) - Database hosting service. Deployed project uses an ElephantSQL database.
+- [Lucid](https://lucid.app/) - Web-based diagramming application. Used to create database schema. 
 
 ##### Back to [top](#table-of-contents)
 
