@@ -19,7 +19,7 @@ This repository contains the Django REST Framework API for the xPress front end 
 
 ## User Stories
 The projects back-end section is focussed on it's administrative functionality and adresses a single user story:
-- As site admin , I want to be able to create, edit and delete Users, Posts and Comments, so that I can have full control over the sites content and be able to remove any inapropriate content.
+- As site admin , I want to be able to create, edit and delete Users, Posts and Comments, so that I can have full control over the sites content.
 
 ## Database
 
@@ -106,6 +106,8 @@ The following tests were carried out on the app:
 - Automated testing
 
 ### Manual testing
+
+- As site admin , I want to be able to create, edit and delete Users, Posts and Comments, so that I can have full control over the sites content.
 
 **Test** | **Action** | **Expected Result** | **Actual Result**
 ---------|------------|---------------------|------------------
