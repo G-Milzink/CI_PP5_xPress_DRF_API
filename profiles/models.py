@@ -11,7 +11,7 @@ class Profile(models.Model):
     name = models.CharField(max_length=50, blank=False)
     avatar = models.ImageField(
         upload_to='avatars/',
-        default='../xPress/default_avatar'
+        default='xPress/default_avatar'
     )
     bio = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
