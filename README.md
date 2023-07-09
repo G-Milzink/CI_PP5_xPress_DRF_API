@@ -28,16 +28,47 @@ The following models were created to represent the database model structure of t
 
 
 #### User Model
+Contains information about the user.
+Part of the Django allauth library.
+
+- OneToOne relation with Profile model "owner" field.
+- ForeignKey relation with Follower model "owner" field.
+- ForeigKey relation with Follower model "followed" field.
+- ForeignKey relation with Post model "owner" field.
+- ForeignKey relation with Comment model "owner" field.
+- ForeignKey relation with Like model "owner" field.
 
 #### Profile Model
+Contains the following fields:
 
+"owner", "name", "avatar", "bio", "created_on" and "updated_on".
+- OneToOne relation between "owner" field and User model "ID" field.
 #### Follower Model
+Contains the following fields:
+
+"owner", "followed" and "created_on".
+- ForeignKey relation between "owner" field and User model "ID" field.
+- ForeignKey relation between "followed" field and User model "ID" field.
 
 #### Post Model
+Contains the following fields:
 
-#### Comment Model
+"owner", "title", "incclude_text", "text", "excerpt", "include_image", "image", "include_audio", "audio", "published", "created_on" and "updated_on".
+- ForeignKey relation between "owner" field and User model "ID" field.
+
+#### Comment Model   
+Contains the following fields:
+
+"owner", "post", "text", "created_on" and "updated_on".
+- ForeignKey relation between "owner" field and User model "ID" field.
+- ForeignKey relation between "post" field and Post model "ID" field.
 
 #### Like model
+Contains the following fields:
+
+"owner", "post" and "created_on".
+- ForeignKey relation between "owner" field and User model "ID" field.
+- ForeignKey relation between "post" field and Post model "ID" field.
 
 ##### Back to [top](#table-of-contents)
 
