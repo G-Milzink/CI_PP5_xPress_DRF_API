@@ -96,9 +96,19 @@ Contains the following fields:
 
 ### Python Validation
 
+During development all Python code has been continuously checked for warings and error using [Pycodestyle](https://pypi.org/project/pycodestyle/)
+No errors were reported in the final code.
+
 ## Testing
 
+The following tests were carried out on the app:
+- Manual testing of user stories
+- Automated testing
+
 ### Manual testing
+
+**Test** | **Action** | **Expected Result** | **Actual Result**
+---------|------------|---------------------|------------------
 
 ### Automated testing
 
