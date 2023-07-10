@@ -1,14 +1,13 @@
 # xPress API
 **Developer: Gustaaf Milzink**
 
-[Live Website]() coming soon...
+[Live API](https://xpress-drf-api-96b1c58706ca.herokuapp.com/)
 
 This repository contains the Django REST Framework API for the xPress front end application.
 
-[Repository]() coming soon...
+[Repository](https://github.com/G-Milzink/CI_PP5_xPress_react_frontend)
 
-[Live Website]() coming soon...
-
+[Live Website](https://xpress-react-frontend-611bb46bac21.herokuapp.com/)
 ## Table of Contents
   - [User Stories](#user-stories)
   - [Database](#database)
