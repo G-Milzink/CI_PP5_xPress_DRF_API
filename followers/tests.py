@@ -43,7 +43,7 @@ class FollowerDetailViewTests(APITestCase):
         self.user_b = User.objects.create_user(
             username='user_b', password='pass_b')
 
-    def test_user_can_retrieve_follower_with_valid_id(self):
+    def test_can_retrieve_follower_with_valid_id(self):
         Follower.objects.create(
             owner=self.user_a,
             followed=self.user_b
@@ -53,7 +53,7 @@ class FollowerDetailViewTests(APITestCase):
         self.assertEqual(response.data['followed_name'], 'user_b')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-    def test_user_can_not_retrieve_follower_with_invalid_id(self):
+    def test_can_not_retrieve_follower_with_invalid_id(self):
         Follower.objects.create(
             owner=self.user_a,
             followed=self.user_b
