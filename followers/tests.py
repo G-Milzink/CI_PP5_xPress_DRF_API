@@ -34,3 +34,46 @@ class FollowerListViewTests(APITestCase):
             '/followers/', {'owner': user_a, 'followed': user_b}
         )
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
+
+class FollowerDetailViewTests(APITestCase):
+    def setUp(self):
+        self.user_a = User.objects.create_user(
+            username='user_a', password='pass_a')
+        self.user_b = User.objects.create_user(
+            username='user_b', password='pass_b')
+
+    def test_user_can_retrieve_follower_with_valid_id(self):
+        Follower.objects.create(
+            owner=self.user_a,
+            followed=self.user_b
+        )
+        response = self.client.get('/followers/1/')
+        self.assertEqual(response.data['owner'], 'user_a')
+        self.assertEqual(response.data['followed_name'], 'user_b')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_user_can_not_retrieve_follower_with_invalid_id(self):
+        Follower.objects.create(
+            owner=self.user_a,
+            followed=self.user_b
+        )
+        response = self.client.get('/followers/999/')
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+    def test_logged_in_user_can_unfollow_other_user(self):
+        Follower.objects.create(
+            owner=self.user_a,
+            followed=self.user_b
+        )
+        self.client.login(username='user_a', password='pass_a')
+        response = self.client.delete('/followers/1/')
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+
+    def test_logged_out_user_can_not_unfollow_other_user(self):
+        Follower.objects.create(
+            owner=self.user_a,
+            followed=self.user_b
+        )
+        response = self.client.delete('/followers/1/')
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
