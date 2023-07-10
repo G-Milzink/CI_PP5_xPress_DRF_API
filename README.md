@@ -3,7 +3,7 @@
 
 [Live API](https://xpress-drf-api-96b1c58706ca.herokuapp.com/)
 
-This repository contains the Django REST Framework API for the xPress front end application.
+This repository contains the Django REST Framework API for the xPress front-end application.
 
 [Repository](https://github.com/G-Milzink/CI_PP5_xPress_react_frontend)
 
