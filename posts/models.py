@@ -22,7 +22,7 @@ class Post(models.Model):
     include_audio = models.BooleanField(default=False)
     audio = CloudinaryField(
         folder='xPress/post_audios',
-        resource_type='auto',
+        resource_type='video',
         default='../xPress/default_post_audio',
         blank=True
     )
