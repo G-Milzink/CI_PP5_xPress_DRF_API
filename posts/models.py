@@ -23,7 +23,7 @@ class Post(models.Model):
     audio = CloudinaryField(
         folder='xPress/post_audios',
         resource_type='auto',
-        default='../xPress/default_post_image',
+        default='../xPress/default_post_audio',
         blank=True
     )
     audio_description = models.CharField(max_length=300, blank=True)
