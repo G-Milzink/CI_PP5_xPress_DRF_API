@@ -13,7 +13,7 @@ class PostSerializer(serializers.ModelSerializer):
     profile_image = serializers.ReadOnlyField(
         source='owner.profile.avatar.url'
     )
-    audio = serializers.FileField()
+    audio = serializers.FileField(required=False)
     like_id = serializers.SerializerMethodField()
     comments_count = serializers.ReadOnlyField()
     likes_count = serializers.ReadOnlyField()
