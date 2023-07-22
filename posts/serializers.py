@@ -24,9 +24,9 @@ class PostSerializer(serializers.ModelSerializer):
         return None
 
     def validate_image(self, value):
-        if value.size > 1024 * 1024 * 8:
+        if value.size > 1024 * 1024 * 5:
             raise serializers.ValidationError(
-                'Image size exceeds 8MB!'
+                'Image size exceeds 5MB!'
             )
         if value.image.width > 4096:
             raise serializers.ValidationError(
@@ -62,5 +62,5 @@ class PostSerializer(serializers.ModelSerializer):
             'profile_id', 'profile_image',
             'is_owner', 'like_id',
             'comments_count', 'likes_count',
-            'publish',
+            "publish",
         ]
