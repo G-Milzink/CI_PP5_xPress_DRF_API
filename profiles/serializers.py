@@ -17,20 +17,20 @@ class ProfileSerializer(serializers.ModelSerializer):
     followers_count = serializers.ReadOnlyField()
     following_count = serializers.ReadOnlyField()
 
-    def validate_avatar(self, value):
-        if value.size > 1024 * 1024 * 2:
-            raise serializers.ValidationError(
-                'Image size exceeds 2MB!'
-            )
-        if value.width > 1024:
-            raise serializers.ValidationError(
-                'Image width exceeds 1024 pixels!'
-            )
-        if value.height > 4096:
-            raise serializers.ValidationError(
-                'Image height exceeds 1024 pixels!'
-            )
-        return value
+    # def validate_avatar(self, value):
+    #     if value.size > 1024 * 1024 * 2:
+    #         raise serializers.ValidationError(
+    #             'Image size exceeds 2MB!'
+    #         )
+    #     if value.width > 1024:
+    #         raise serializers.ValidationError(
+    #             'Image width exceeds 1024 pixels!'
+    #         )
+    #     if value.height > 4096:
+    #         raise serializers.ValidationError(
+    #             'Image height exceeds 1024 pixels!'
+    #         )
+    #     return value
 
     def get_is_owner(self, obj):
         request = self.context['request']
