@@ -4,6 +4,10 @@ from .models import Follower
 
 
 class FollowerSerializer(serializers.ModelSerializer):
+    """
+    Serializer for the Follower model
+    Checks for and reports possible duplicate likes.
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
     followed_name = serializers.ReadOnlyField(source='followed.username')
 

@@ -5,7 +5,7 @@ from cloudinary.models import CloudinaryField
 
 class Post(models.Model):
     """
-    Post database model.
+    Post model, relates to 'owner' (User instance)
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=200, blank=False)

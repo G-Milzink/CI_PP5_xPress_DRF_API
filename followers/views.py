@@ -5,6 +5,11 @@ from .serializers import FollowerSerializer
 
 
 class FollowerList(generics.ListCreateAPIView):
+    """
+    List all followers.(user followin other user)
+    Create a follower. i.e. follow a user if logged in.
+    Perform_create: associate current loggedin user with a follower.
+    """
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = FollowerSerializer
     queryset = Follower.objects.all()

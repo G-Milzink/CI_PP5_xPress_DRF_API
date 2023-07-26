@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from profiles.models import Profile
 
 
-class XpressAPIGlobalTests(APITestCase):
+class xpressAPIGlobalTests(APITestCase):
     def setUp(self):
         User.objects.create_user(username='user_a', password='pass_a')
 
