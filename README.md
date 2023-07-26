@@ -108,15 +108,79 @@ The following tests were carried out on the app:
 
 - As site admin , I want to be able to create, edit and delete Users, Posts and Comments, so that I can have full control over the sites content.
 
-**Test** | **Action** | **Expected Result** | **Actual Result**
+**Test** | **Action** | **Expected Result** | **Actual Result** 
 ---------|------------|---------------------|------------------
+User | Create, update & delete user | A user can be created, edited or deleted | Works as expected 
+Profile | Create, update & delete | User profile can be created, edited or deleted | Works as expected
+Post | Create, update & delete | A post can be created, edited or deleted | Works as expected
+Comment | Create, update & delete | A comment can be created, edited or deleted | Works as expected
+
+<details><summary>Screenshots - USER</summary>
+    <img src="docs/testing/manual/user_a.png">
+    <br>
+    <img src="docs/testing/manual/user_b.png">
+    <br>
+    <img src="docs/testing/manual/user_c.png">
+    <br>
+    <img src="docs/testing/manual/user_d.png">
+    <br>
+    <img src="docs/testing/manual/user_e.png">
+    <br>
+</details>
+
+<details><summary>Screenshots - PROFILE</summary>
+    <img src="docs/testing/manual/profile_a.png">
+    <br>
+    <img src="docs/testing/manual/profile_b.png">
+    <br>
+    <img src="docs/testing/manual/profile_c.png">
+    <br>
+</details>
+
+<details><summary>Screenshots - POST</summary>
+    <img src="docs/testing/manual/post_a.png">
+    <br>
+    <img src="docs/testing/manual/post_b.png">
+    <br>
+    <img src="docs/testing/manual/post_c.png">
+    <br>
+</details>
+
+<details><summary>Screenshots - COMMENT</summary>
+    <img src="docs/testing/manual/comment_a.png">
+    <br>
+    <img src="docs/testing/manual/comment_b.png">
+    <br>
+</details>
 
 ### Automated testing
+
+Automated testing was done using the Django Rest Framework APITestCase.
+
+- Tests summary
+
+<details><summary>Individual app report</summary>
+<img src="docs/testing/automated/comments.png">
+<img src="docs/testing/automated/followers.png">
+<img src="docs/testing/automated/likes.png">
+<img src="docs/testing/automated/posts.png">
+<img src="docs/testing/automated/profiles.png">
+<img src="docs/testing/automated/express_api.png">
+</details>
+
+<details><summary>Combined app report</summary>
+<img src="docs/testing/automated/combined.png">
+</details>
 
 ##### Back to [top](#table-of-contents)
 
 ## Credits
 
 ### Code
+
+### Code
+
+This project was created based on the Code Institute's Django REST API walkthrough project ['Moments'](https://github.com/Code-Institute-Solutions/drf-api).
+Extra functionality was added such as: Creating a draft post, the ability to post audio, the ability to exclude specific post components from publication while storing them inside the post.
 
 ##### Back to [top](#table-of-contents)
