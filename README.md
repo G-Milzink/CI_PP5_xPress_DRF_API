@@ -98,6 +98,11 @@ Contains the following fields:
 During development all Python code has been continuously checked for warings and error using [Pycodestyle](https://pypi.org/project/pycodestyle/)
 No errors were reported in the final code.
 
+<details><summary>Results</summary>
+<img src="docs/validation/py/compiled.png"> 
+<img src="docs/validation/py/noproblems.png">
+</details>
+
 ## Testing
 
 The following tests were carried out on the app:
