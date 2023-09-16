@@ -64,7 +64,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
-    '8000-gmilzink-cipp5xpressdrf-g3xzybucxyg.ws-eu102.gitpod.io',
+    '8000-gmilzink-cipp5xpressdrf-g3xzybucxyg.ws-eu104.gitpod.io',
     os.environ.get('ALLOWED_HOST'),
 ]
 
