@@ -32,22 +32,6 @@ class CollageSerializer(serializers.ModelSerializer):
             )
         return value
 
-    def create(self, validated_data):
-        images_data = {}
-
-        for i in range(1, 21):
-            image_field_name = f'image{i}'
-            if image_field_name in validated_data:
-                images_data[image_field_name] = validated_data.pop(image_field_name)  # noqa
-
-        collage = Collage.objects.create(**validated_data)
-
-        for field_name, image_data in images_data.items():
-            setattr(collage, field_name, image_data)
-
-        collage.save()
-        return collage
-
     def get_is_owner(self, obj):
         request = self.context['request']
         return request.user == obj.owner
