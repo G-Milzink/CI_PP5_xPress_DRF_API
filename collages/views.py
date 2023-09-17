@@ -11,9 +11,9 @@ class CollageList(generics.ListCreateAPIView):
     """
     List all collages, create collage if logged in.
     """
-    serializer_class = PostSerializer
+    serializer_class = CollageSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    queryset = Post.objects.annotate(
+    queryset = Collage.objects.annotate(
         comments_count=Count('comment', distinct=True),
         likes_count=Count('likes', distinct=True)
     ).order_by(Greatest('created_on', 'updated_on').desc())
