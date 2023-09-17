@@ -32,27 +32,27 @@ class CollageSerializer(serializers.ModelSerializer):
             )
         return value
 
-        def get_is_owner(self, obj):
-            request = self.context['request']
-            return request.user == obj.owner
+    def get_is_owner(self, obj):
+        request = self.context['request']
+        return request.user == obj.owner
 
-        def get_like_id(self, obj):
-            user = self.context['request'].user
-            if user.is_authenticated:
-                like = Like.objects.filter(
-                    owner=user, collage=obj
-                ).first()
+    def get_like_id(self, obj):
+        user = self.context['request'].user
+        if user.is_authenticated:
+            like = Like.objects.filter(
+                owner=user, collage=obj
+            ).first()
             return like.id if like else None
         return None
 
-        class Meta:
-            model = Collage
-            fields = [
-                'id', 'owner', 'title',
-                'image', 'collage_description',
-                'created_on', 'updated_on',
-                'profile_id', 'profile_image',
-                'is_owner', 'like_id',
-                'comments_count', 'likes_count',
-                'publish',
-            ]
+    class Meta:
+        model = Collage
+        fields = [
+            'id', 'owner', 'title',
+            'image', 'collage_description',
+            'created_on', 'updated_on',
+            'profile_id', 'profile_image',
+            'is_owner', 'like_id',
+            'comments_count', 'likes_count',
+            'publish',
+        ]
