@@ -49,10 +49,16 @@ class CollageSerializer(serializers.ModelSerializer):
         model = Collage
         fields = [
             'id', 'owner', 'title',
-            'image', 'collage_description',
+            'collage_description',
             'created_on', 'updated_on',
             'profile_id', 'profile_image',
             'is_owner', 'like_id',
             'comments_count', 'likes_count',
             'publish',
         ]
+
+        for i in range(1, 21):  # This generates fields for image1 to image20
+            image_field_name = f'image{i}'
+            fields.append(image_field_name)
+
+        fields = list(set(fields))
