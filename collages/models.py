@@ -24,5 +24,8 @@ for i in range(1, 21):
     field_name = f"image{i}"
     Collage.add_to_class(
         field_name,
-        models.ImageField(upload_to='collage_images', blank=True, null=True)
+        models.ImageField(upload_to='collage_images',
+                          default='../xPress/default_collage_image',
+                          blank=True
+                          )
     )
