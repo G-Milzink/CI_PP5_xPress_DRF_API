@@ -39,3 +39,15 @@ class CollageList(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+
+
+class CollageDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Retrieve a collage, and edit or delete it if you are the owner.
+    """
+    serializer_class = CollageSerializer
+    permission_classes = [IsOwnerOrReadOnly]
+    queryset = Collage.objects.annotate(
+        comments_count=Count('comment', distinct=True),
+        likes_count=Count('likes', distinct=True)
+    ).order_by('-created_on')
