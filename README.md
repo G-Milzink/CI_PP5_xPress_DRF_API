@@ -1,7 +1,7 @@
 # xPress API
 **Developer: Gustaaf Milzink**
 
-[Live API](https://xpress-drf-api-96b1c58706ca.herokuapp.com/)
+[Live API](https://xpress-api-cc62aa415d83.herokuapp.com/)
 
 This repository contains the Django REST Framework API for the xPress front-end application.
 
