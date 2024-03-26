@@ -64,7 +64,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
-    '8000-gmilzink-cipp5xpressdrf-g3xzybucxyg.ws-eu104.gitpod.io',
+    'https://xpress-api-cc62aa415d83.herokuapp.com/',
     os.environ.get('ALLOWED_HOST'),
 ]
 
