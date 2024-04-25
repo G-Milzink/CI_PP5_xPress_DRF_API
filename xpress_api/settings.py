@@ -126,6 +126,7 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
     ]
 
 CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'xpress_api.urls'
 
